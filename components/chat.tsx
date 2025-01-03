@@ -27,17 +27,17 @@ const socials = [
   {
     title: "View source",
     icon: Icons.Github,
-    link: "https://github.com/aakash19here",
+    link: process.env.NEXT_PUBLIC_GITHUB_REPO,
   },
   {
     title: "Live Demo",
     icon: Icons.Vercel,
-    link: "https://github.com/aakash19here",
+    link: process.env.NEXT_PUBLIC_APP_URL,
   },
   {
     title: "Watch Demo",
     icon: Icons.Youtube,
-    link: "https://youtube.com",
+    link: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO,
   },
 ];
 
@@ -178,10 +178,14 @@ export default function Chat() {
               key={index}
             >
               <button className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col">
-                <div className="flex w-full text-xs md:text-sm justify-between flex-row items-center gap-2">
+                <a
+                  target="_blank"
+                  href={social.link}
+                  className="flex w-full text-xs md:text-sm justify-between flex-row items-center gap-2"
+                >
                   {social.title}
                   <social.icon className=" size-3.5 md:size-4" />
-                </div>
+                </a>
               </button>
             </motion.div>
           ))}
