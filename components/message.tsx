@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { BotIcon, UserIcon } from "lucide-react";
 import { ReactNode } from "react";
 import { Markdown } from "./markdown";
-import { Separator } from "./ui/separator";
 
 export const Message = ({
   role,
