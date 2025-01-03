@@ -33,8 +33,8 @@ export default function Limits() {
       <Tooltip>
         <TooltipTrigger asChild>
           <Button
-            variant={"ghost"}
-            className="absolute items-center gap-0 top-10 right-10"
+            variant={"outline"}
+            className="fixed items-center gap-0 top-3 right-3 md:top-10 md:right-10"
           >
             <Clock className="inline-block mr-2 size-4" />
             <span>{isPending ? "..." : data?.requests}</span>
