@@ -169,7 +169,7 @@ export default function Chat() {
             <SendIcon />
           </button>
         </form>
-        <div className="grid sm:grid-cols-3 gap-2 w-full px-4 md:px-0 mx-auto md:max-w-xl">
+        <div className="grid grid-cols-3 gap-2 w-full px-4 md:px-0 mx-auto md:max-w-xl">
           {socials.map((social, index) => (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -178,9 +178,9 @@ export default function Chat() {
               key={index}
             >
               <button className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col">
-                <div className="flex w-full justify-between flex-row items-center gap-2">
+                <div className="flex w-full text-xs md:text-sm justify-between flex-row items-center gap-2">
                   {social.title}
-                  <social.icon className="w-4 h-4" />
+                  <social.icon className=" size-3.5 md:size-4" />
                 </div>
               </button>
             </motion.div>
