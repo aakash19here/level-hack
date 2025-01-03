@@ -30,11 +30,6 @@ const socials = [
     link: process.env.NEXT_PUBLIC_GITHUB_REPO,
   },
   {
-    title: "Live Demo",
-    icon: Icons.Vercel,
-    link: process.env.NEXT_PUBLIC_APP_URL,
-  },
-  {
     title: "Watch Demo",
     icon: Icons.Youtube,
     link: process.env.NEXT_PUBLIC_YOUTUBE_VIDEO,
@@ -169,7 +164,7 @@ export default function Chat() {
             <SendIcon />
           </button>
         </form>
-        <div className="grid grid-cols-3 gap-2 w-full px-4 md:px-0 mx-auto md:max-w-xl">
+        <div className="grid grid-cols-2 gap-2 w-full px-4 md:px-0 mx-auto md:max-w-xl">
           {socials.map((social, index) => (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
