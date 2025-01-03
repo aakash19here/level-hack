@@ -1,9 +1,9 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { motion } from "framer-motion";
-import { SendIcon } from "lucide-react";
+import { Loader2, SendIcon } from "lucide-react";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
 import { Icons } from "./icons";
@@ -48,11 +48,11 @@ type Message = {
 
 export default function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
-
+  const queryClient = useQueryClient();
   const formRef = useRef<HTMLFormElement>(null);
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
-  const { mutate, error } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: async (message: string) => {
       const { data } = await axios.post<{ message: string }>("/api/chat", {
         message,
@@ -68,10 +68,12 @@ export default function Chat() {
           content: data,
         },
       ]);
+
+      queryClient.invalidateQueries({ queryKey: ["limits"] });
     },
     onError: (error) => {
       if (error instanceof AxiosError) {
-        toast.error(error.response?.data.message);
+        toast.error(error.response?.data.error);
       } else {
         toast.error("Something went wrong");
       }
@@ -109,6 +111,11 @@ export default function Chat() {
               content={message.content}
             />
           ))}
+          {isPending && (
+            <div className="flex items-center justify-center p-4">
+              <Loader2 className="h-6 w-6 animate-spin" />
+            </div>
+          )}
           <div
             ref={messagesEndRef}
             className="flex-shrink-0 min-w-[24px] min-h-[24px]"
