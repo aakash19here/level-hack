@@ -1,51 +1,71 @@
+import { Check } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { MaxWidthWrapper } from "../ui/max-width-wrapper";
+import WordRotate from "../ui/word-rotate";
+
+const cards = [
+  {
+    title: "Post Type Analyzer",
+
+    steps: [
+      "Select a Post Type: Choose from options like Reels, Carousels, or Static Images.",
+      "View Insights: Get detailed engagement metrics like likes, shares, and comments.",
+      "Ideal Timing: Receive recommendations for the best time to post.",
+    ],
+  },
+  {
+    title: "Engagement growth chat bot",
+
+    steps: [
+      "Ask for Tips: Chat with the bot to get actionable strategies for boosting engagement.",
+      "Get Custom Suggestions: Receive tailored advice based on your content type and goals.",
+      "Plan and Post: Apply tips like ideal posting schedules, trending hashtags, and more.",
+    ],
+  },
+];
+
 export default function Engagement() {
   return (
-    <section className="text-white flex flex-col my-4">
-      <h1 className="text-2xl text-center bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] inline-block text-transparent bg-clip-text">
-        Learn. Apply.
-      </h1>
-      <h1 className="text-2xl text-center">Boost Engagement.</h1>
-      <p className="text-lg text-gray-400 text-center">
-        Explore powerful tools to analyze post performance and get personalized
-        tips for growing your Instagram audience.
-      </p>
-      <div className="flex items-center justify-around">
-        <div className="border-2 border-red-500 p-6 rounded-xl w-1/3">
-          <h2 className="text-xl font-bold">Post Type Analyzer</h2>
-          <p className="text-gray-400">How to Use:</p>
-          <ol className="text-sm list-decimal text-gray-400">
-            <li>
-              Select a Post Type: Choose from options like Reels, Carousels, or
-              Static Images.
-            </li>
-            <li>
-              View Insights: Get detailed engagement metrics like likes, shares,
-              and comments.
-            </li>
-            <li>
-              Ideal Timing: Receive recommendations for the best time to post.
-            </li>
-          </ol>
+    <MaxWidthWrapper className="px-6 lg:px-0">
+      <section className="py-12 lg:py-24">
+        <div className="space-y-2.5">
+          <WordRotate
+            duration={1500}
+            words={["Learn", "Apply"]}
+            className="text-red-600 font-secondary text-start lg:text-start text-4xl font-bold"
+          />
+          <h1 className="text-base text-start lg:text-start text-secondary">
+            Boost Engagement.
+          </h1>
+          <h4 className="text-base text-muted-foreground text-start lg:text-start">
+            Explore powerful tools to analyze post performance and get
+            personalized tips for growing your Instagram audience.
+          </h4>
+          <div className="flex flex-col lg:flex-row gap-2 justify-center w-10/12 mx-auto pt-5">
+            {cards.map((card, index) => (
+              <Card className="bg-black border-red-600" key={index}>
+                <CardHeader className="space-y-2">
+                  <CardTitle className="text-secondary underline underline-offset-4">
+                    <h2>{card.title}</h2>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ol className="text-sm space-y-2 list-decimal text-white">
+                    {card.steps.map((step, index) => (
+                      <h4 key={index} className="flex items-start">
+                        <span className="text-red-600 inline-block mr-2">
+                          <Check />
+                        </span>
+                        {step}
+                      </h4>
+                    ))}
+                  </ol>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div className="border-2 border-red-500 p-6 rounded-xl w-1/3">
-          <h2 className="text-xl font-bold">Engagement growth chat bot</h2>
-          <p className="text-gray-400">How to Use:</p>
-          <ol className="text-sm list-decimal text-gray-400">
-            <li>
-              Ask for Tips: Chat with the bot to get actionable strategies for
-              boosting engagement.
-            </li>
-            <li>
-              Get Custom Suggestions: Receive tailored advice based on your
-              content type and goals.
-            </li>
-            <li>
-              Plan and Post: Apply tips like ideal posting schedules, trending
-              hashtags, and more.
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
+      </section>
+    </MaxWidthWrapper>
   );
 }
