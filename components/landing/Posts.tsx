@@ -1,25 +1,27 @@
-import Image from 'next/image'
-import logo from "@/assets/postsImage.jpg"
-import { Input } from '../ui/input'
+import logo from "@/assets/postsImage.jpg";
+import Image from "next/image";
+import { MaxWidthWrapper } from "../ui/max-width-wrapper";
+import WordRotate from "../ui/word-rotate";
 
 export default function Posts() {
   return (
-    <section className="flex items-center w-full pl-8 my-2">
-        <div className="w-1/2 flex flex-col">
-            <h1 className="text-6xl text-center bg-gradient-to-r from-green-400 via-blue-600 to-violet-700 inline-block text-transparent bg-clip-text">
-                Pick. Post.
-            </h1>
-            <h1 className="text-5xl text-white text-center my-3">
-                Dominate Insights.
-            </h1>
-            <p className="text-gray-400 text-xl">
-                Pick a post type and uncover engagement trends tailored for your content strategy.Reel
-            </p>
-            <Input className="text-white w-3/4 mx-[auto]"/>
+    <MaxWidthWrapper className="px-6 lg:px-0">
+      <div className="flex flex-col-reverse gap-12 lg:gap-0 lg:flex-row items-center w-full">
+        <div className="w-1/2 h-[300px] lg:h-[600px] lg:-rotate-90 relative lg:mr-auto">
+          <Image src={logo} alt="logo" fill className="object-contain" />
         </div>
-        <div className="w-1/2 h-full">
-            <Image src={logo} alt="logo" className="h-[90vh] w-[35vw]"/>
+        <div className="flex flex-col justify-start items-start lg:items-start gap-1">
+          <WordRotate
+            duration={1500}
+            words={["Pick", "Post", "Dominate"]}
+            className="text-green-500 font-secondary text-start text-2xl lg:text-4xl font-bold"
+          />
+          <h4 className="text-muted-foreground text-base max-w-md text-start lg:text-start">
+            Pick a post type and uncover engagement trends tailored for your
+            content strategy.
+          </h4>
         </div>
-    </section>
-  )
+      </div>
+    </MaxWidthWrapper>
+  );
 }

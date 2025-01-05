@@ -8,12 +8,12 @@ import Response from "@/components/landing/Response";
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <Hero/>
-    <Posts/>
-    <Response />
-    <Engagement/>
-    <Footer/>
+      <Navbar />
+      <Hero />
+      <Posts />
+      <Response />
+      <Engagement />
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,5 @@
-import Chat from "@/components/Chat/chat";
-import Limits from "@/components/Chat/limits";
-
+import Chat from "@/components/chat/chat";
+import Limits from "@/components/chat/limits";
 
 export default async function Home() {
   return (
