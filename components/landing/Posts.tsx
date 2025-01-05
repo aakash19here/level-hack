@@ -1,4 +1,4 @@
-import logo from "@/assets/postsImage.jpg";
+import logo from "../../public/assets/postsImage.jpg";
 import Image from "next/image";
 import { MaxWidthWrapper } from "../ui/max-width-wrapper";
 import WordRotate from "../ui/word-rotate";
