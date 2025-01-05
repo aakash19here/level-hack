@@ -1,4 +1,4 @@
-import footerImage from "@/assets/footerimage.jpg";
+import footerImage from "../../public/assets/footerimage.jpg";
 import { Slack, X } from "lucide-react";
 import Image from "next/image";
 import { MaxWidthWrapper } from "../ui/max-width-wrapper";
