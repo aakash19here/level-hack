@@ -3,13 +3,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Clock, Info } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "@/components/ui/tooltip";
 
 function getMessage(requests: number) {
   if (requests > 0) {
