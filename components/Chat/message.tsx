@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { BotIcon, UserIcon } from "lucide-react";
 import { ReactNode } from "react";
-import { Markdown } from "./markdown";
+import { Markdown } from "./Chat/markdown";
 
 export const Message = ({
   role,

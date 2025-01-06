@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react';
-import slack from "@/assets/slack.jpg";
-import footerImage from "@/assets/footerimage.jpg"
+import triangle from "@/assets/footerTriangle.png";
+import footerImage from "@/assets/footerimage.png"
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
         Celebrating innovation and collaboration with the minds driving this extraordinary competition.X
       </p>
       <div className='flex items-center justify-center gap-3'>
-        <Image src={slack} alt='slack' height={150}/>
+        <Image src={triangle} alt='slack' height={150}/>
         <Image src={footerImage} alt='slack' height={150}/>
       </div>
     </footer>

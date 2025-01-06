@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from "@/assets/postsImage.jpg"
+import logo from "@/assets/posts.png"
 import { Input } from '../ui/input'
 
 export default function Posts() {
