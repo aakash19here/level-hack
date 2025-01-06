@@ -1,19 +1,13 @@
-import Engagement from "@/components/landing/Engagement";
-import Footer from "@/components/landing/Footer";
-import Hero from "@/components/landing/Hero";
-import Navbar from "@/components/landing/Navbar";
-import Posts from "@/components/landing/Posts";
-import Response from "@/components/landing/Response";
-
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Posts />
-      <Response />
-      <Engagement />
-      <Footer />
+      <div style={{ width: "100%", height: "100vh" }}>
+        <iframe
+          src="https://engageflow.framer.website/"
+          style={{ width: "100%", height: "100%", border: "none" }}
+          title="Framer Website"
+        />
+      </div>
     </>
   );
 }
